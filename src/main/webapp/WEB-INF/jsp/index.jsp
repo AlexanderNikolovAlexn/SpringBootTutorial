@@ -9,9 +9,28 @@
 <%--<c:set var="ctx" value="${pageContext['request'].contextPath}"/>--%>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#btnRefresh').on('click',function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/getTime",
+                    success: function (data) {
+                        $("#time").html(data);
+                    },
+                    error: function (e) {
+                        console.log("ERROR: ", e);
+                    }
+                });
+            });
+        });
+    </script>
     <title>${homepage}</title>
 </head>
 <body>
 <h1>${homepage}</h1>
+<button id="btnRefresh">Refresh time</button>
+<div>Time is: <span id="time">${time}</span></div>
 </body>
 </html>
