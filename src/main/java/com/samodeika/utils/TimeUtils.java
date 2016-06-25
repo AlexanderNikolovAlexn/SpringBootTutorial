@@ -11,4 +11,9 @@ public class TimeUtils {
         Calendar calendar = Calendar.getInstance();
         return dateFormat.format(calendar.getTime());
     }
+
+    public static String getTimezone() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.getTimeZone().getDisplayName();
+    }
 }

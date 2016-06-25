@@ -1,5 +1,6 @@
 package com.samodeika.controllers;
 
+import com.samodeika.entities.TimeWithTimezone;
 import com.samodeika.utils.TimeUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -19,14 +20,14 @@ public class IndexController {
     String homepage(Model model) {
         System.out.println("Index controller. Homepage!");
         model.addAttribute("homepage", "Spring Boot Tutorial");
-        model.addAttribute("time", TimeUtils.getTime());
+        model.addAttribute("timeWithTimezone", new TimeWithTimezone(TimeUtils.getTime(), TimeUtils.getTimezone()));
         return "index";
     }
 
-    @RequestMapping(value="/getTime", method= RequestMethod.GET)
-    public @ResponseBody String getTime() {
-        String time = TimeUtils.getTime();
-        return time;
+    @RequestMapping(value="/getTime", method= RequestMethod.GET, produces = "application/json")
+    public @ResponseBody TimeWithTimezone getTime() {
+        TimeWithTimezone timeWithTimezone = new TimeWithTimezone(TimeUtils.getTime(), TimeUtils.getTimezone());
+        return timeWithTimezone;
     }
 
 }

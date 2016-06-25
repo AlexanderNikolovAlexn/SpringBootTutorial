@@ -16,8 +16,12 @@
                 $.ajax({
                     type: "GET",
                     url: "/getTime",
+                    dataType: 'json',
                     success: function (data) {
-                        $("#time").html(data);
+                        console.log(data);
+                        for(var k in data) {
+                            $('#' + k).html(data[k]);
+                        }
                     },
                     error: function (e) {
                         console.log("ERROR: ", e);
@@ -31,6 +35,8 @@
 <body>
 <h1>${homepage}</h1>
 <button id="btnRefresh">Refresh time</button>
-<div>Time is: <span id="time">${time}</span></div>
+<br/>
+<div>Time is: <span id="time">${timeWithTimezone.time}</span>
+              <span id="timezone">${timeWithTimezone.timezone}</span></div>
 </body>
 </html>
