@@ -9,7 +9,11 @@
 <%--<c:set var="ctx" value="${pageContext['request'].contextPath}"/>--%>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel='stylesheet' href='webjars/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+    <script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('#btnRefresh').on('click',function () {
@@ -34,8 +38,10 @@
 </head>
 <body>
 <h1>${homepage}</h1>
-<button id="btnRefresh">Refresh time</button>
-<br/>
+<button id="btnRefresh" type="button" class="btn btn-default btn-md btn-info">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Refresh time
+</button>
+<p/>
 <div>Time is: <span id="time">${timeWithTimezone.time}</span>
               <span id="timezone">${timeWithTimezone.timezone}</span></div>
 </body>
