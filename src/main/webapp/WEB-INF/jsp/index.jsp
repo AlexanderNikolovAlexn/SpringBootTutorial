@@ -37,12 +37,19 @@
     <title>${homepage}</title>
 </head>
 <body>
-<h1>${homepage}</h1>
-<button id="btnRefresh" type="button" class="btn btn-default btn-md btn-info">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Refresh time
-</button>
-<p/>
-<div>Time is: <span id="time">${timeWithTimezone.time}</span>
-              <span id="timezone">${timeWithTimezone.timezone}</span></div>
+<div class="container navbar-fixed-top">
+    <h1>${homepage}</h1>
+    <button id="btnRefresh" type="button" class="btn btn-default btn-md btn-info">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Refresh time
+    </button>
+    <p/>
+    <div>Time is: <span id="time">${timeWithTimezone.time}</span>
+                  <span id="timezone">${timeWithTimezone.timezone}</span></div>
+</div>
+<footer class="footer">
+    <div class="container navbar-fixed-bottom">
+        <p class="text-muted">My Footer inc</p>
+    </div>
+</footer>
 </body>
 </html>

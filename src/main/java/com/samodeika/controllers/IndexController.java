@@ -18,7 +18,6 @@ public class IndexController {
 
     @RequestMapping("/")
     String homepage(Model model) {
-        System.out.println("Index controller. Homepage!");
         model.addAttribute("homepage", "Spring Boot Tutorial");
         model.addAttribute("timeWithTimezone", new TimeWithTimezone(TimeUtils.getTime(), TimeUtils.getTimezone()));
         return "index";
