@@ -3,6 +3,7 @@ package com.samodeika.utils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class TimeUtils {
 
@@ -14,6 +15,6 @@ public class TimeUtils {
 
     public static String getTimezone() {
         Calendar calendar = Calendar.getInstance();
-        return calendar.getTimeZone().getDisplayName();
+        return calendar.getTimeZone().getDisplayName(false, TimeZone.SHORT);
     }
 }
