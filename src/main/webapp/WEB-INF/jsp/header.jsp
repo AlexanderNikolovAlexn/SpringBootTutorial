@@ -29,8 +29,21 @@
         overflow:hidden;
     }
 
-    .time-style{
+    .time-style {
         text-decoration-color: white;
+    }
+
+    .background-color {
+        background-color: white;
+    }
+
+    .btn-refresh-style {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #9d9d9d;
+        line-height: 20px;
+        position: relative;
+        display: block;
     }
 
 </style>
@@ -49,15 +62,17 @@
                 </ul>
             </li>
             <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li>
+                <button id="btnRefresh" type="button" class="btn btn-refresh-style btn-default btn-md btn-info">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Refresh time
+                </button>
+            </li>
+            <li class="background-color">
+                <div class="time-style">Time is: <span id="time">${timeWithTimezone.time}</span>
+                    <span id="timezone">${timeWithTimezone.timezone}</span>
+                </div>
+            </li>
         </ul>
     </div>
-    <div class="float-right">
-        <button id="btnRefresh" type="button" class="btn btn-default btn-md btn-info">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Refresh time
-        </button>
-        <p/>
-        <div class="time-style">Time is: <span id="time">${timeWithTimezone.time}</span>
-            <span id="timezone">${timeWithTimezone.timezone}</span></div>
-    </div>
+
 </nav>
